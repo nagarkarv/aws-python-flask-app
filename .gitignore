@@ -1,3 +1,11 @@
+# Python files
 venv
 __pycache__
+
+# VS Code files
 .vscode
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
