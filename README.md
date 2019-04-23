@@ -2,3 +2,4 @@
 Sample Python Flask Application for AWS work
 
 - custom-metric - A simple script that sends custom metric data to cloudwatch
+- Creates a dynamodb table 'customer' using .ebextensions 
