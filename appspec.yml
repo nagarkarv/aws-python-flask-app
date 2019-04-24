@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+hooks:
+  BeforeInstall:
+    - location: codedeploy-scripts/beforeInstall.sh
+  AfterInstall:
+    - location: codedeploy-scripts/afterInstall.sh
+      timeout: 180
+  ApplicationStart:
+    - location: codedeploy-scripts/applicationStart.sh
+      timeout: 3600
+  ValidateService:
+    - location: codedeploy-scripts/validateService.sh
+      timeout: 3600

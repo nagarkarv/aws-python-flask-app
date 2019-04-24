@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Metadata: 
+  License: vikram
+Description: 'Cloudformation template to create a build and deploy pipeline'
+Resources:
+  # Create SNS notification for code commit
+  SnsNotifications:
+    Type: AWS::SNS::Topic
+    Properties:
+      DisplayName: codecommit-aws-python-flask-app-sns-topic
+      TopicName: codecommit-aws-python-flask-app-sns-topic

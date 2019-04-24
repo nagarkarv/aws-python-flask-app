@@ -1,0 +1,30 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo Starting installion - Installing zip and unzip
+      - apt install zip unzip
+    finally:
+      - echo Installation step completed
+  pre_build:
+    commands:
+      - echo Starting pre-build step
+      - mkdir target
+    finally:
+      - echo Completed pre-build step
+  build:
+    commands:
+      - echo Starting build step
+    finally:
+      - echo Build Completed
+  post_build:
+    commands:
+      - echo Starting post build
+      - ls -lrt
+      - zip -r target/aws-python-flask-app-$MAJOR_VER.$MINOR_VER.$PATCH_VER.zip . -x .git/**\* cf-pipeline/**\*
+      - ls -lrt 
+    finally:
+      - echo Post Build step completed
+artifacts:
+  files:
+    - target/aws-python-flask-app-$MAJOR_VER.$MINOR_VER.$PATCH_VER.zip
